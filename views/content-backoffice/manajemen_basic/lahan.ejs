@@ -1,0 +1,175 @@
+<% include ../../template-backoffice/header.ejs %>
+
+<!-- BEGIN PAGE CONTENT -->
+<div class="page-content">
+  <div class="header">
+    <h2><strong>Perubahan Lahan</strong></h2>
+    <div class="breadcrumb-wrapper">
+      <ol class="breadcrumb">
+        <li><a href="/backoffice">Dashboard</a></li>
+        <li><a href="/detail_lahan/list">Data</a></li>
+        <li class="active">Edit Data</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="panel">
+        <div class="panel-content">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 table-no-border">
+              <table class="table table-bordered m-b-0">
+                <tbody>
+                  <tr>
+                    <td style="width: 160px;">No. Bidang</td>
+                    <td style="width: 1px;">:</td>
+                    <td><%= data[0].no_bidang%></td>
+                  </tr>
+
+                  <tr>
+                    <td>Alamat</td>
+                    <td>:</td>
+                    <td><%= data[0].alamat%></td>
+                  </tr>
+
+                  <tr>
+                    <td>Kecamatan</td>
+                    <td>:</td>
+                    <td><%= data[0].kec%></td>
+                  </tr>
+
+                  <tr>
+                    <td>Kelurahan</td>
+                    <td>:</td>
+                    <td><%= data[0].kel%></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 table-no-border">
+              <table class="table table-bordered m-b-0">
+                <tbody>
+                  <tr>
+                    <td style="width: 160px;">Pemilik</td>
+                    <td  style="width: 1px;">:</td>
+                    <td><%= data[0].pemilik%></td>
+                  </tr>
+
+                  <tr>
+                    <td>Jenis Lahan</td>
+                    <td>:</td>
+                    <td><%= data[0].jenis_lahan%></td>
+                  </tr>
+
+                  <tr>
+                    <td>Status Lahan</td>
+                    <td>:</td>
+                    <td><%= data[0].status_lahan%></td>
+                  </tr>
+
+                  <tr>
+                    <td>Luas</td>
+                    <td>:</td>
+                    <td><%= data[0].luas%></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <hr/>
+            </div>
+          </div>
+
+          <div class="row">
+            <form method="POST" action="/detail_lahan/submit_perubahan_lahan">
+              <input type="hidden" class="form-control" name="detailLahanId" id="" value="<%= data[0].id%>">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                  <div class="form-group">
+                    <label>Luas</label>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <input type="text" class="form-control" name="luas" id="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                  <div class="form-group">
+                    <label>Tahun</label>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <select class="form-control" name="tahun" data-search="true">
+                          <%for(var c = 2018; c <=2024; c++){%>
+                          <option><%=c%></option>
+                          <%}%>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+              <div style="display: flex;height: 60px;justify-content: center;align-items: flex-end;">
+                <button class="btn btn-warning btn-embossed" style="margin-bottom: 0px;" type="submit">Tambah</button>
+              </div>
+            </div>
+          </form>
+          </div>
+
+          <div class="row m-t-30">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Luas</th>
+                    <th>Tahun</th>
+                    
+                    <th>Option</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%for(var i=0;i<perubahan_lahan.length; i++){%>
+                  <tr>
+                    <td><%= perubahan_lahan[i].luas%></td>
+                    <td><%= perubahan_lahan[i].tahun%></td>
+                    <td>
+                      <a class="btn btn-danger btn-embossed btn-sm"
+                      href="/detail_lahan/delete_perubahan_lahan/<%= perubahan_lahan[i].id%>/<%= data[0].id%>" role="button"
+                      onclick="return confirm('Apakah anda yakin untuk menghapus data ini ?');"><i
+                        class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    </td>
+                  </tr>
+                  <%}%>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="copyright">
+      <p class="pull-left sm-pull-reset">
+        <span>Copyright <span class="copyright">©</span> 2020</span>
+        <span>Pemerintah Kota Salatiga | Dinas Pertanian</span>.
+      </p>
+    </div>
+  </div>
+</div>
+<!-- END PAGE CONTENT -->
+
+<% include ../../template-backoffice/footer.ejs %>
+<script type="text/javascript">
+
+</script>

@@ -1,0 +1,190 @@
+<% include ../../template-backoffice/header.ejs %>
+
+<!-- BEGIN PAGE CONTENT -->
+<div class="page-content">
+  <div class="header">
+    <h2><strong>Data LP2B</strong></h2>
+    <div class="breadcrumb-wrapper">
+      <ol class="breadcrumb">
+        <li><a href="/backoffice">Dashboard</a>
+        </li>
+        <li class="active">Data</li>
+      </ol>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="panel">
+        <div class="panel-header header-line">
+          <div class="panel bg-aero" style="margin-bottom: 0px;"> 
+            <div class="panel-header ui-sortable-handle"> 
+              <h3><strong>Pencarian berdasarkan Kecamatan dan Kelurahan</strong></h3> 
+            </div> 
+            <div class="panel-content table-no-border" style="padding-top: 0px;">
+              <div class="row">
+                <div class="col-md-12 col-lg-12">
+                  <div style="display: flex;width: 100%;">
+                    <div style="width: 40%;">
+                      <select class="form-control" name="" id="id_kec" data-search="true" >
+                        <option value="">-- Piih --</option>
+                        <% for(var i=0; i<kec.length; i++){ %> 
+                          <option><%= kec[i]['nama_kecamatan']%></option>
+                          <% }%>
+                      </select>
+                    </div>
+                    <div style="width: 2%;"></div>
+                    <div style="width: 40%;">
+                      <select class="form-control" name="" id="id_kel" data-search="true" >
+                        <option value="">-- Piih --</option>
+                      </select>
+                    </div>
+                    <div style="width: 2%;"></div>
+                    <div style="width: 16%;"><button class="btn btn-success btn-embossed pull-right" id="btnExport1">Export Excel</button></div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+         <div class="row" style="margin-top: 15px;">
+           <div class="col-md-6 col-lg-6">
+            <a class="btn btn-primary btn-embossed" href="/detail_lahan/insert" role="button"><i class="fa fa-plus"
+              aria-hidden="true"></i>Tambah Data</a>
+           </div>
+           <div class="col-md-6 col-lg-6">
+            
+           </div>
+         </div>
+        </div>
+        <div class="panel-content pagination2">
+          <table class="table table-bordered table-striped table-hover" id="data">
+
+            <thead>
+
+              <tr>
+                <th class="header">No.</th>
+                <th class="header">No.Bidang</th>
+                <th class="header">Alamat</th>
+                <th class="header">Kecamatan</th>
+                <th class="header">Kelurahan</th>
+                <th class="header">Pemilik</th>
+                <th class="header">Penggarap</th>
+                <th class="header">Koordinat Lokasi</th>
+                <th class="header">Jenis Lahan</th>
+                <th class="header">Status Lahan</th>
+                <th class="header">Luas</th>
+                <th class="header">Pemanfaatan Lahan</th>
+                <th class="header">Option</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+              <% data.forEach((el, i) => { %>
+              <tr>
+                <td><%= i+1%></td>
+                <td><%=el.dataValues.no_bidang%></td>
+                <td><%=el.dataValues.alamat%></td>
+                <td><%=el.dataValues.kec%></td>
+                <td><%=el.dataValues.kel%></td>
+                <td><%=el.dataValues.pemilik%></td>
+                <td><%=el.dataValues.penggarap%></td>
+                <td><%= el.dataValues.tengah.coordinates[0]%>,<br/><%= el.dataValues.tengah.coordinates[1]%></td>
+                <td><%=el.dataValues.jenis_lahan%></td>
+                <td><%=el.dataValues.status_lahan%></td>
+                <td><%=el.dataValues.luas%></td>
+                <td><%=el.dataValues.pemanfaatanLahan.nama%></td>
+                <td>
+                  <center>
+                    <ul class="list-inline" style="text-align: center;">
+                      <li><a class="btn btn-warning btn-embossed btn-sm" href="/detail_lahan/edit/<%=el.dataValues.id%>"
+                          role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></li>
+                      <li class="separator">|</li>
+                      <li><a class="btn btn-danger btn-embossed btn-sm"
+                          href="/detail_lahan/delete/<%=el.dataValues.id%>" role="button"
+                          onclick="return confirm('Apakah anda yakin untuk menghapus data ini ?');"><i
+                            class="fa fa-trash-o" aria-hidden="true"></i></a></li>
+                      <li class="separator">|</li>
+                      <li><a class="btn btn-default btn-embossed btn-sm" target="_blank" href="/detail_lahan/cetak/<%=el.dataValues.id%>"
+                        role="button"><i class="fa fa-print" aria-hidden="true"></i></a></li>
+                    </ul>
+
+                    <ul class="list-inline" style="text-align: center;">
+                      <li><a class="btn btn-success btn-embossed btn-sm" href="/detail_lahan/katam/<%=el.dataValues.id%>"
+                        role="button">Kalender Tanam</a></li>
+
+                        <li><a class="btn btn-info btn-embossed btn-sm" href="/detail_lahan/lahan/<%=el.dataValues.id%>"
+                          role="button">Pengurangan Lahan</a></li>
+                    </ul>
+                  </center>
+                </td>
+              </tr>
+              <%})%>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="copyright">
+      <p class="pull-left sm-pull-reset">
+        <span>Copyright <span class="copyright">©</span> 2018 </span>
+        <span>Pemerintah</span>.
+      </p>
+    </div>
+  </div>
+</div>
+<!-- END PAGE CONTENT -->
+
+<% include ../../template-backoffice/footer.ejs %>
+
+<script type="text/javascript">
+$( "#id_kec" ).change(function() {
+  $("#id_kel").empty();
+  $('#id_kel').select2();
+  if($('#id_kec').val()!=""){
+    $.get( "/detail_lahan/get_kel/"+$('#id_kec').val(), function( data ) {
+    console.log(data);
+    
+    $('#id_kel').html('<option value="">-- Semua --</option>')
+    $.each(data, function(i, item){
+                                       
+                                        $("#id_kel").append('<option>'+item.nama_kelurahan+'</option>');
+                                      
+                                    })  
+});
+  }
+  
+});
+
+  $(document).ready(function () {
+    $('#data').DataTable({
+      "language": {
+        "sProcessing": "Sedang memproses...",
+        "sLengthMenu": "_MENU_",
+        "sZeroRecords": "Tidak ditemukan data yang sesuai",
+        "sInfo": "Menampilkan _START_ sampai _END_ dari _TOTAL_ entri",
+        "sInfoEmpty": "Menampilkan 0 sampai 0 dari 0 entri",
+        "sInfoFiltered": "(disaring dari _MAX_ entri keseluruhan)",
+        "sInfoPostFix": "",
+        "sUrl": "",
+        "oPaginate": {
+          "sFirst": "Pertama",
+          "sPrevious": "Sebelumnya",
+          "sNext": "Selanjutnya",
+          "sLast": "Terakhir"
+        }
+      },
+      "columnDefs": [
+        { "width": "140px", "targets": 12 }
+      ],
+    });
+  });
+
+  $("#btnExport1").click(function(e) {
+    e.preventDefault();
+
+    window.open("/detail_lahan/cetak_excel?kec="+$("#id_kec").val()+"&kel="+$("#id_kel").val());
+  });
+</script>

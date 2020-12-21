@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/images/template/shortcut_icon.ico">
+    <title></title>
+
+    <!-- <link href="/stylesheets/template/css/theme.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="/stylesheets/template/css/style.css" rel="stylesheet">
+    <link href="/stylesheets/template/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <!-- Plugin This Page -->
+    <link rel="stylesheet" href="/stylesheets/template/css/style1.css" type="text/css" media="screen">
+    <!-- End Plugins This Page -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        html {
+            font-family: "avenir";
+
+        }
+
+        @font-face {
+            font-family: "avenir";
+            src: url('/stylesheets/template/fonts/Avenir.ttf');
+        }
+
+        .a {
+            transition: .3s all ease !important;
+            ;
+        }
+
+        a:hover {
+
+            color: #099315 !important;
+            transition: .3s all ease !important;
+        }
+
+        .item:hover {
+            color: #fff !important;
+            background-color: #333 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar -->
+    <section
+        style="left: 0;right: 0;top: 0;z-index: 10;background-image: url(/images/texture.png);height: 90px;box-shadow: 0 8px 6px -6px black;">
+
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-12 col-lg-12" style="padding-left: 80px;">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light"
+                        style="background-color: transparent !important;">
+                        <div><a class="navbar-brand" href="#"><img src="/images/Lambang_Kota_Salatiga.png"
+                                    width="50px"></a></div>
+                        <div>
+                            <h4>PERTANIAN KOTA SALATIGA</h4>
+                            <h6 style="color: #099315;">PEMERINTAHAN KOTA SALATIGA</h6>
+                        </div>
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto" style="display: flex;">
+                                <li class="nav-item ">
+                                    <a class="nav-link" style="font-size: 20px;color: #683c10;" href="/">HOME </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="font-size: 20px;color: #683c10;"
+                                        href="/data_lp2b">DATA</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="font-size: 20px;color: #683c10;"
+                                        href="/statistik">STATISTIK</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="font-size: 20px;color: #683c10;"
+                                        href="/detail_lahan/insert" data-toggle="modal"
+                                        data-target="#exampleModal">INPUT
+                                        DATA</a>
+                                </li>
+
+                                <!-- <li class="nav-item ">
+                                    <a class="nav-link" style="font-size: 20px;color: #683c10;;" href="/">Home
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="font-size: 20px;color: #683c10;" href="#peta">Peta</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="font-size: 20px;color: #683c10;" href="#jenislahan">Jenis
+                                        Lahan</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="font-size: 20px;color: #683c10;"
+                                        href="#statistik">Statistik
+                                        Pertanian</a>
+                                </li> -->
+
+                            </ul>
+                            <ul style="padding-left: 20px;margin-right: -10px;margin-top: -45px; ">
+                                <li class="navbar-nav">
+                                    <a href="#" data-toggle="modal" data-target="#Modal"
+                                        style="background-color: #099315;color: #000;">Log
+                                        in <i class="fas fa-user"></i></a>
+                                    <div>
+
+                                    </div>
+
+                                </li>
+                            </ul>
+
+                            <!-- <div class="nav-item " style="display: flex;">
+                        
+                            <a class="nav-link " href="#" data-toggle="modal" data-target="#Modal"
+                                style="color: rgb(89, 88, 88);"><i class="fas fa-user"></i>
+                                Sign In
+                            </a>
+
+                        </div> -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modal -->
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color: transparent;border-radius: 0;border: 0;">
+                <!-- <div class="modal-header" style="align-items: center !important;border-bottom:0 ;">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style="text-align: center !important;">
+                        Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div> -->
+
+                <div class="modal-body">
+                    <style>
+                        label {
+                            font-family: "Raleway", sans-serif;
+                            font-size: 16px;
+                        }
+
+                        #forgot-pass {
+                            color: #099315;
+                            font-family: "Raleway", sans-serif;
+                            font-size: 10pt;
+                            margin-top: 3px;
+                            text-align: right;
+                        }
+
+                        #card {
+                            background-image: url('/images/texture.png');
+                            border-radius: 8px;
+                            box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+                            height: 500px;
+                            margin: 6rem auto 8.1rem auto;
+                            width: 450px;
+                        }
+
+                        #card-content {
+                            padding: 12px 40px;
+                        }
+
+                        #card-title {
+                            font-family: "Raleway Thin", sans-serif;
+                            letter-spacing: 4px;
+                            padding-bottom: 23px;
+                            padding-top: 13px;
+                            text-align: center;
+                        }
+
+                        #signup {
+                            color: #2dbd6e;
+                            font-family: "Raleway", sans-serif;
+                            font-size: 10pt;
+                            margin-top: 16px;
+                            text-align: center;
+                        }
+
+                        #submit-btn {
+                            background: -webkit-linear-gradient(right, #00a650, #099315);
+                            border: none;
+                            border-radius: 21px;
+                            box-shadow: 0px 1px 8px #00a650;
+                            cursor: pointer;
+                            color: white;
+                            font-family: "Raleway SemiBold", sans-serif;
+                            height: 50px;
+                            margin: 0 auto;
+                            margin-top: 50px;
+                            transition: 0.25s;
+                            width: 300px;
+                        }
+
+                        #submit-btn:hover {
+                            box-shadow: 0px 1px 18px #00a650;
+                        }
+
+                        .form {
+                            align-items: left;
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                        .form-border {
+                            background: -webkit-linear-gradient(right, #00a650, #099315);
+                            height: 1px;
+                            width: 100%;
+                        }
+
+                        .form-content {
+                            background-image: url('/images/texture.png');
+                            border: none;
+                            outline: none;
+                            padding-top: 14px;
+                        }
+
+                        .underline-title {
+                            background: -webkit-linear-gradient(right, #00a650, #099315);
+                            height: 2px;
+                            margin: 10px auto 0 auto;
+                            width: 89px;
+                        }
+                    </style>
+                    <div id="card">
+                        <div id="card-content">
+                            <div id="card-title">
+                                <h2>LOGIN</h2>
+                                <div class="underline-title"></div>
+                            </div>
+                            <form method="post" class="form" role="form" action="/autentifikasi/login">
+                                <input type="hidden" name="flag" value="1" />
+                                <label for="user-email" style="padding-top:13px">
+                                    &nbsp;Email
+                                </label>
+                                <input id="user-email" class="form-content" type="username" name="username"
+                                    autocomplete="on" required />
+                                <div class="form-border"></div>
+                                <label for="user-password" style="padding-top:22px">&nbsp;Password
+                                </label>
+                                <input id="user-password" class="form-content" type="password" name="password"
+                                    required />
+                                <div class="form-border"></div>
+                                <a href="#">
+                                    <legend id="forgot-pass">Forgot password?</legend>
+                                </a>
+                                <input id="submit-btn" type="submit" name="submit" value="LOGIN" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12" style="display: flex;">
+                    <div class="col-md-8 col-lg-8" style="padding-top: 40px;">
+                        <div id="chart" style="height: 370px; width: 100%;"></div>
+                    </div>
+                    <div class="col-md-4 col-lg-4" style="padding-top: 40px;padding-right: 0;padding-left: 0;">
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">No.</th>
+                                    <th rowspan="2">Kelurahan</th>
+                                    <th colspan="2" class="text-center">Jenis Lahan</th>
+                                </tr>
+
+                                <tr>
+                                    <th class="text-center">Basah</th>
+                                    <th class="text-center">Kering</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>1</td>
+                                    <td><a href="#"> ngesrep</a></td>
+                                    <td>97</td>
+                                    <td>45</td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td><a href="#"> tembalang</a></td>
+                                    <td>30</td>
+                                    <td>20</td>
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td><a href="#">timoho</a></td>
+                                    <td>23</td>
+                                    <td>13</td>
+                                </tr>
+
+                                <tr>
+                                    <td>4</td>
+                                    <td><a href="#">banjarsari</a></td>
+                                    <td>10</td>
+                                    <td>21</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-top: 100px;">
+        <footer class="bg-color">
+            <div class="inner-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <p style="text-align: center;">&copy; 2020 Salatiga</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <!-- Plugins This Page -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var chart1 = new CanvasJS.Chart("chart", {
+                theme: "light1", // "light2", "dark1", "dark2"
+                animationEnabled: true, // change to true		
+                title: {
+                    text: "Jenis Lahan",
+
+
+                },
+                data: [
+                    {
+                        // Change type to "bar", "area", "spline", "pie",etc.
+                        name: "basah",
+                        type: "column",
+                        dataPoints: [
+                            { label: "Argomulyo", color: "#20c997", y: 97 },
+                            { label: "Sidomukti", color: "#28a745", y: 30 },
+                            { label: "Sidorejo", color: "#49a942", y: 23 },
+                            { label: "Tingkir", color: "#007bff", y: 40 },
+
+                        ]
+                    },
+                    {
+                        // Change type to "bar", "area", "spline", "pie",etc.
+                        name: "kering",
+                        type: "column",
+                        dataPoints: [
+                            { label: "Argomulyo", color: "#ffc20e", y: 45 },
+                            { label: "Sidomukti", color: "#333", y: 20 },
+                            { label: "Sidorejo", color: "#17a2b8", y: 13 },
+                            { label: "Tingkir", color: "#49a942", y: 21 },
+
+                        ]
+                    }
+                ]
+            });
+            var chart2 = new CanvasJS.Chart("chartCircle",
+                {
+                    theme: "light2",
+                    title: {
+                        text: "Luas Lahan"
+                    },
+                    data: [
+                        {
+                            type: "pie",
+                            showInLegend: true,
+                            toolTipContent: "{y} - #percent %",
+                            yValueFormatString: "#,##0,,.## Million",
+                            legendText: "{indexLabel}",
+                            dataPoints: [
+                                { y: 4181563, indexLabel: "Argomulyo" },
+                                { y: 2175498, indexLabel: "Sidomukti" },
+                                { y: 3125844, indexLabel: "Sidorejo" },
+                                { y: 1176121, indexLabel: "Tingkir" },
+                            ]
+                        }
+                    ]
+                });
+            var chart3 = new CanvasJS.Chart("CCircle",
+                {
+                    theme: "light2",
+                    title: {
+                        text: "Status Lahan"
+                    },
+                    data: [
+                        {
+                            type: "pie",
+                            showInLegend: true,
+                            toolTipContent: "{y} - #percent %",
+                            yValueFormatString: "#,##0,,.## Million",
+                            legendText: "{indexLabel}",
+                            dataPoints: [
+                                { y: 4181563, indexLabel: "Hak Milik" },
+                                { y: 2175498, indexLabel: "Sewa" },
+
+                            ]
+                        }
+                    ]
+                });
+            var chart4 = new CanvasJS.Chart("circle2",
+                {
+                    theme: "light2",
+                    title: {
+                        text: "Intensitas Tanam"
+                    },
+                    data: [
+                        {
+                            type: "pie",
+                            showInLegend: true,
+                            toolTipContent: "{y} - #percent %",
+                            yValueFormatString: "#,##0,,.## Million",
+                            legendText: "{indexLabel}",
+                            dataPoints: [
+                                { y: 97, indexLabel: "3 kali" },
+                                { y: 48, indexLabel: "2 kali" },
+                                { y: 23, indexLabel: "1 kali" },
+                                { y: 10, indexLabel: "> 3 kali" },
+                            ]
+                        }
+                    ]
+                });
+            var chart5 = new CanvasJS.Chart("circle1",
+                {
+                    theme: "light2",
+                    title: {
+                        text: "Produktivitas Lahan"
+                    },
+                    data: [
+                        {
+                            type: "pie",
+                            showInLegend: true,
+                            toolTipContent: "{y} - #percent %",
+                            yValueFormatString: "#,##0,,.## Million",
+                            legendText: "{indexLabel}",
+                            dataPoints: [
+                                { y: 97, indexLabel: "Argomulyo" },
+                                { y: 48, indexLabel: "Sidomukti" },
+                                { y: 23, indexLabel: "Sidorejo" },
+                                { y: 10, indexLabel: "Tingkir" },
+                            ]
+                        }
+                    ]
+                });
+            var chart6 = new CanvasJS.Chart("circle",
+                {
+                    theme: "light2",
+                    title: {
+                        text: "Komoditas Lahan"
+                    },
+                    data: [
+                        {
+                            indexLabelPlacement: "outside",
+                            type: "doughnut",
+                            dataPoints: [
+                                { y: 97, indexLabel: "Padi", exploded: true },
+                                { y: 30, indexLabel: "Jagung" },
+                                { y: 23, indexLabel: "Gandum", exploded: true },
+                                { y: 15, indexLabel: "Ubi" },
+
+                            ]
+                        }
+                    ]
+                });
+
+            chart1.render();
+            chart2.render();
+            chart3.render();
+            chart4.render();
+            chart5.render();
+            chart6.render();
+        }
+    </script>
+
+    <!-- End Plugins This Page -->
+    <script type="text/javascript">
+
+    </script>
+</body>
+
+</html>

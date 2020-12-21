@@ -1,0 +1,66 @@
+
+/*-------------------------------------------------*/
+/* =  Services
+/*-------------------------------------------------*/
+.cbp-ig-grid li {
+	width: 33.33%;
+	float: left;
+	text-align: center;
+    
+}
+@media screen and (max-width: 25%) {
+    .cbp-ig-grid li {
+        width: 25%;
+    }
+ 
+    .cbp-ig-grid li > a:hover .cbp-ig-title:before {
+        background: #fff;
+        margin-top: 80px;
+    }
+    /* reset the grid lines */
+	.cbp-ig-grid li:nth-child(-n+3){
+	
+	}
+
+	.cbp-ig-grid li:nth-child(3n-1),
+	.cbp-ig-grid li:nth-child(3n-2) {
+		box-shadow: none;
+	}
+
+	.cbp-ig-grid li:nth-child(-n+2){
+		border-top: none;
+	}
+
+	.cbp-ig-grid li:nth-child(2n-1) {
+		box-shadow: 1px 0 0 #ddd;
+	}
+}
+
+@media screen and (max-width: 41.6em) { 
+	.cbp-ig-grid li {
+		width: 100%;
+	}
+
+	.cbp-ig-grid li:nth-child(-n+2){
+
+	}
+
+	.cbp-ig-grid li:nth-child(2n-1) {
+		box-shadow: none
+	}
+
+	.cbp-ig-grid li:first-child {
+		
+	}
+}
+
+@media screen and (max-width: 25em) { 
+	.cbp-ig-grid {
+		font-size: 80%;
+	}
+
+	.cbp-ig-grid .cbp-ig-category {
+		margin-top: 20px;
+	}
+}
+

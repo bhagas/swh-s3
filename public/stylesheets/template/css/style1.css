@@ -1,0 +1,302 @@
+* {
+    
+}
+
+p {
+    color: #b9b9b9;
+    font-size: 17px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 28px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #000000;
+    font-size: 38px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 22px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.bg-color p,
+.bg-color h1 {
+    color: #ffffff;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+
+.bg-color {
+    background: #00a650;
+}
+
+.title-section {
+    padding-top: 60px;
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+ul.filter {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+ul.filter li {
+    display: inline-block;
+    float: left\0/;
+    margin-left: 7px;
+    margin-bottom: 10px;
+}
+
+ul.filter li:first-child {
+    margin-left: 0px;
+}
+
+ul.filter li a {
+    display: inline-block;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    padding: 13px 18px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    transition: all 0.17s ease-in-out;
+    -moz-transition: all 0.17s ease-in-out;
+    -webkit-transition: all 0.17s ease-in-out;
+    -o-transition: all 0.17s ease-in-out;
+}
+
+ul.filter li a:hover {
+    background: rgba(255,255,255, 0.2);
+    background: rgb(255,255,255)\0/;
+}
+
+ul.filter li a.active {
+    background: #fff;
+    color: #1abc9c;
+}
+
+
+
+/* General grid styles */
+.cbp-ig-grid {
+    list-style: none;
+    padding: 45px 0 45px 0;
+    margin: 0;
+}
+ 
+/* Clear floats */
+.cbp-ig-grid:before, 
+.cbp-ig-grid:after { 
+    content: " "; 
+    display: table; 
+}
+ 
+.cbp-ig-grid:after { 
+    clear: both; 
+}
+ 
+/* grid item */
+.cbp-ig-grid li {
+    width: 33.3%;
+    float: left;
+    height: 320px;
+    text-align: center;
+    border-top: 1px solid #dddddd;
+}
+ 
+.cbp-ig-grid li:nth-child(-n+3){
+    border-top: none;
+}
+ 
+.cbp-ig-grid li:nth-child(3n-1),
+.cbp-ig-grid li:nth-child(3n-2) {
+    box-shadow: 1px 0 0 #ddd;
+}
+ 
+/* anchor style */
+.cbp-ig-grid li > a {
+    display: block;
+    height: 100%;
+    color: #085c4b;
+    -webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
+    transition: background 0.2s;
+}
+ 
+/* the icon with pseudo class for icon font */
+.cbp-ig-icon {
+    padding: 50px 0 0 0;
+    height: 190px;
+    display: block;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -moz-transform 0.2s;
+    transition: transform 0.2s;
+}
+ 
+.cbp-ig-icon:before {
+    font-size: 14em;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.cbp-ig-icon-statistic {
+    background: url(/images/statistic.png) center center no-repeat;
+    background-size: 115px;
+}
+
+.cbp-ig-icon-peta {
+    background: url(/images/map.png) center center no-repeat;
+    background-size: 115px;
+}
+
+.cbp-ig-icon-data {
+    background: url(/images/folder.png) center center no-repeat;
+    background-size: 115px;
+}
+
+.cbp-ig-icon-input {
+    background: url(/images/report.png) center center no-repeat;
+    background-size: 115px;
+}
+ 
+/* title element */
+.cbp-ig-grid .cbp-ig-title {
+    margin: 0px 0 10px 0;
+    padding: 10px 0 0 0;
+    font-size: 1.8em;
+    position: relative;
+    -webkit-transition: -webkit-transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;
+    transition: transform 0.2s;
+}
+ 
+.cbp-ig-grid .cbp-ig-title:before {
+    content: '';
+    position: absolute;
+    background: #085c4b;
+    width: 80px;
+    height: 6px;
+    top: 0px;
+    left: 50%;
+    margin: -20px 0 0 -40px;
+    -webkit-transition: margin-top 0.2s; /* top or translate does not seem to work in Firefox */
+    -moz-transition: margin-top 0.2s;
+    transition: margin-top 0.2s;
+}
+ 
+.cbp-ig-grid .cbp-ig-category {
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 1em;
+    letter-spacing: 1px;
+    color: #fff;
+    -webkit-transform: translateY(10px);
+    -moz-transform: -moz-translateY(10px);
+    -ms-transform: -ms-translateY(10px);
+    transform: translateY(10px);
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    -webkit-transition: transform 0.3s, opacity 0.2s;
+}
+ 
+.cbp-ig-grid li:hover .cbp-ig-category,
+.touch .cbp-ig-grid li .cbp-ig-category {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+}
+ 
+/* Hover styles */
+ 
+.cbp-ig-grid li > a:hover {
+    background: #1abc9c;
+}
+ 
+.cbp-ig-grid li > a:hover .cbp-ig-icon {
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px);
+}
+ 
+.cbp-ig-grid li > a:hover .cbp-ig-icon:before,
+.cbp-ig-grid li > a:hover .cbp-ig-title {
+    color: #fff;
+}
+ 
+.cbp-ig-grid li > a:hover .cbp-ig-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    -webkit-transform: translateY(-30px);
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+}
+ 
+.cbp-ig-grid li > a:hover .cbp-ig-title:before {
+    background: #fff;
+    margin-top: 50px;
+}
+
+
+/* =  Footer
+/*-------------------------------------------------*/
+
+.inner-footer {
+    padding:13px;
+    background: rgba(255,255,255,0.1);
+}
+
+.inner-footer p {
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+
+/*-------------------------------------------------*/
+/* =  Skin02 added
+/*-------------------------------------------------*/
+
+
+/*-------------------------------------------------*/
+/* =  Skin04
+/*-------------------------------------------------*/

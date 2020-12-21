@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/images/template/shortcut_icon.ico">
+    <title></title>
+
+    <!-- <link href="/stylesheets/template/css/theme.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="/stylesheets/template/css/style.css" rel="stylesheet">
+    <link href="/stylesheets/template/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <!-- Plugin This Page -->
+    <link rel="stylesheet" href="/stylesheets/template/css/style1.css" type="text/css" media="screen">
+    <!-- End Plugins This Page -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        html {
+            font-family: "avenir";
+
+        }
+
+        @font-face {
+            font-family: "avenir";
+            src: url('/stylesheets/template/fonts/Avenir.ttf');
+        }
+
+        .a {
+            transition: .3s all ease !important;
+            ;
+        }
+
+        a:hover {
+
+            color: #099315 !important;
+            transition: .3s all ease !important;
+        }
+
+        .item:hover {
+            color: #fff !important;
+            background-color: #333 !important;
+        }
+
+        input {
+            background-color: rgba(26, 188, 156, 0.20);
+            border: 0;
+        }
+
+        select {
+            background-color: rgba(0, 166, 80, 0.20);
+            border: 0;
+        }
+
+        .odd {
+            background-color: rgba(0, 166, 80, 0.23) !important;
+        }
+
+        .sorting_1 {
+            background-color: rgba(0, 166, 80, 0.23) !important;
+        }
+
+        .sorting {
+            background-color: rgba(0, 166, 80, 0.5) !important;
+        }
+
+        .sorting_asc {
+            background-color: rgba(0, 166, 80, 0.5) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar -->
+    <section
+        style="left: 0;right: 0;top: 0;z-index: 10;background-image: url(/images/texture.png);height: 90px;box-shadow: 0 8px 6px -6px black;">
+
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-12 col-lg-12" style="padding-left: 80px;">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light"
+                        style="background-color: transparent !important;">
+                        <div><a class="navbar-brand" href="#"><img src="/images/Lambang_Kota_Salatiga.png"
+                                    width="50px"></a></div>
+                        <div>
+                            <h4>PERTANIAN KOTA SALATIGA</h4>
+                            <h6 style="color: #099315;">PEMERINTAHAN KOTA SALATIGA</h6>
+                        </div>
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto" style="display: flex;">
+                                <li class="nav-item ">
+                                    <a class="nav-link" style="font-size: 20px;color: #683c10;" href="/">HOME </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="font-size: 20px;color: #683c10;"
+                                        href="/data_lp2b">DATA</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="font-size: 20px;color: #683c10;"
+                                        href="/statistik">STATISTIK</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="font-size: 20px;color: #683c10;"
+                                        href="/detail_lahan/insert" data-toggle="modal"
+                                        data-target="#exampleModal">INPUT
+                                        DATA</a>
+                                </li>
+                                <li class="nav-item">
+                                    <style>
+                                        #as:hover {
+                                            box-shadow: 0px 1px 18px #00a650;
+                                            color: #000 !important;
+                                        }
+                                    </style>
+                                    <a id="as" class="nav-link" style="font-size: 20px;color: #683c10; background: -webkit-linear-gradient(right, #00a650, #099315);
+                                    border: none;
+                                    border-radius: 21px;
+                                    cursor: pointer;
+                                    padding: 5px 25px;
+                                    margin-right: 40px;margin-left: 10px;" data-toggle="modal" data-target="#Modal"
+                                        href="#">Sign
+                                        In
+                                    </a>
+                                </li>
+                                <!-- <li class="nav-item ">
+                                    <a class="nav-link" style="font-size: 20px;color: #683c10;;" href="/">Home
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="font-size: 20px;color: #683c10;" href="#peta">Peta</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="font-size: 20px;color: #683c10;" href="#jenislahan">Jenis
+                                        Lahan</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="font-size: 20px;color: #683c10;"
+                                        href="#statistik">Statistik
+                                        Pertanian</a>
+                                </li> -->
+
+                            </ul>
+
+                            <!-- <div class="nav-item " style="display: flex;">
+                        
+                            <a class="nav-link " href="#" data-toggle="modal" data-target="#Modal"
+                                style="color: rgb(89, 88, 88);"><i class="fas fa-user"></i>
+                                Sign In
+                            </a>
+
+                        </div> -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modal -->
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color: transparent;border-radius: 0;border: 0;">
+                <!-- <div class="modal-header" style="align-items: center !important;border-bottom:0 ;">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style="text-align: center !important;">
+                        Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div> -->
+
+                <div class="modal-body">
+                    <style>
+                        label {
+                            font-family: "Raleway", sans-serif;
+                            font-size: 16px;
+                        }
+
+                        #forgot-pass {
+                            color: #099315;
+                            font-family: "Raleway", sans-serif;
+                            font-size: 10pt;
+                            margin-top: 3px;
+                            text-align: right;
+                        }
+
+                        #card {
+                            background-image: url('/images/texture.png');
+                            border-radius: 8px;
+                            box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+                            height: 500px;
+                            margin: 6rem auto 8.1rem auto;
+                            width: 450px;
+                        }
+
+                        #card-content {
+                            padding: 12px 40px;
+                        }
+
+                        #card-title {
+                            font-family: "Raleway Thin", sans-serif;
+                            letter-spacing: 4px;
+                            padding-bottom: 23px;
+                            padding-top: 13px;
+                            text-align: center;
+                        }
+
+                        #signup {
+                            color: #2dbd6e;
+                            font-family: "Raleway", sans-serif;
+                            font-size: 10pt;
+                            margin-top: 16px;
+                            text-align: center;
+                        }
+
+                        #submit-btn {
+                            background: -webkit-linear-gradient(right, #00a650, #099315);
+                            border: none;
+                            border-radius: 21px;
+                            box-shadow: 0px 1px 8px #00a650;
+                            cursor: pointer;
+                            color: white;
+                            font-family: "Raleway SemiBold", sans-serif;
+                            height: 50px;
+                            margin: 0 auto;
+                            margin-top: 50px;
+                            transition: 0.25s;
+                            width: 300px;
+                        }
+
+                        #submit-btn:hover {
+                            box-shadow: 0px 1px 18px #00a650;
+                        }
+
+                        .form {
+                            align-items: left;
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                        .form-border {
+                            background: -webkit-linear-gradient(right, #00a650, #099315);
+                            height: 1px;
+                            width: 100%;
+                        }
+
+                        .form-content {
+                            background-image: url('/images/texture.png');
+                            border: none;
+                            outline: none;
+                            padding-top: 14px;
+                        }
+
+                        .underline-title {
+                            background: -webkit-linear-gradient(right, #00a650, #099315);
+                            height: 2px;
+                            margin: 10px auto 0 auto;
+                            width: 89px;
+                        }
+                    </style>
+                    <div id="card">
+                        <div id="card-content">
+                            <div id="card-title">
+                                <h2>LOGIN</h2>
+                                <div class="underline-title"></div>
+                            </div>
+                            <form method="post" class="form" role="form" action="/autentifikasi/login">
+                                <input type="hidden" name="flag" value="1" />
+                                <label for="user-email" style="padding-top:13px">
+                                    &nbsp;Email
+                                </label>
+                                <input id="user-email" class="form-content" type="username" name="username"
+                                    autocomplete="on" required />
+                                <div class="form-border"></div>
+                                <label for="user-password" style="padding-top:22px">&nbsp;Password
+                                </label>
+                                <input id="user-password" class="form-content" type="password" name="password"
+                                    required />
+                                <div class="form-border"></div>
+                                <a href="#">
+                                    <legend id="forgot-pass">Forgot password?</legend>
+                                </a>
+                                <input id="submit-btn" type="submit" name="submit" value="LOGIN" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <div style="padding: 20px 0;text-align: center;">
+                        <h2>Data Lahan Persawahan</h2>
+                    </div>
+                    <table id="table_id" class="display" id="data">
+
+                        <thead>
+
+                            <tr>
+                                <th class="header">No.</th>
+                                <th class="header">No.Bidang</th>
+                                <th class="header">Alamat</th>
+                                <th class="header">Kelurahan</th>
+                                <th class="header">Kecamatan</th>
+                                <th class="header">Pemilik</th>
+                                <th class="header">Penggarap</th>
+                                <th class="header">Luas</th>
+                                <th class="header">Option</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+                            <% data.forEach(el => { %>
+                            <tr>
+                                <td><%=el.dataValues.id%></td>
+                                <td><%=el.dataValues.no_bidang%></td>
+                                <td><%=el.dataValues.alamat%></td>
+                                <td><%=el.dataValues.kel%></td>
+                                <td><%=el.dataValues.kec%></td>
+                                <td><%=el.dataValues.pemilik%></td>
+                                <td><%=el.dataValues.penggarap%></td>
+                                <td><%=el.dataValues.luas%></td>
+                                <td>
+                                    <center>
+                                        <style>
+                                            #as:hover {
+
+                                                color: #000 !important;
+                                            }
+                                        </style>
+                                        <a id="as" class="nav-link" style="font-size: 16px;color: #683c10; background:  #2dbd6e;
+                                        border: none;
+                                        border-radius: 21px;
+                                        cursor: pointer;
+                                        padding: 5px 20px;
+                                        margin-right: 40px;margin-left: 10px;" href="#">Detail
+                                        </a>
+                                        <!-- <ul class="list-inline" style="text-align: center;">
+                                            <li><a class="btn btn-warning btn-embossed btn-sm" href="" role="button"><i
+                                                        class="fa fa-pencil-square-o" aria-hidden="true"></i></a></li>
+                                            <li class="separator">|</li>
+                                            <li><a class="btn btn-danger btn-embossed btn-sm" href="" role="button"
+                                                    onclick="return confirm('Apakah anda yakin untuk menghapus data ini ?');"><i
+                                                        class="fa fa-trash-o" aria-hidden="true"></i></a></li>
+                                        </ul> -->
+                                    </center>
+                                </td>
+                            </tr>
+                            <%})%>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="padding-top: 100px;background-color: #f8f9fa;">
+        <footer class="bg-color" style="background-color: #004306;">
+            <div class="inner-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <p style="text-align: center;">&copy; 2020 Salatiga</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- Modal tambah -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl" role="document">
+                            <div class="modal-content" style="width: 1080px;">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Tambah Data Lahan</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" style="width: 100%;">
+                                    <form class="col-md-12 col-lg-12" style="display: flex;" role="form"
+                                        action="/detail_lahan/insert" method="POST" enctype="multipart/form-data">
+                                        <div class="col-md-4 col-lg-4">
+
+                                            <div class="form-group">
+                                                <label>No. Bidang</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <input type="text" class="form-control" name="no_bidang" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Alamat</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <input type="text" class="form-control" name="alamat" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Kecamatan</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <select class="form-control" name="kec" id="">
+                                                            <option value="">-- Pilih --</option>
+
+                                                            <option value="argomulyo">argomulyo</option>
+                                                            <option value="sidorejo">sidorejo</option>
+                                                            <option value="sidomukti">sidomukti</option>
+                                                            <option value="tingkir">tingkir</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>kelurahan</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <select class="form-control" name="kel" id="kelurahan"
+                                                            data-search="true">
+                                                            <option>-- Pilih --</option>
+                                                            <option value="timoho">timoho</option>
+                                                            <option value="tembalang">tembalang</option>
+                                                            <option value="ngesrep">ngesrep</option>
+                                                            <option value="bulusan">bulusan</option>
+                                                            <option value="banjarsari">banjarsari</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Pemilik</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <input type="text" class="form-control" name="pemilik" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-4 col-lg-4">
+                                            <div class="form-group">
+                                                <label>Penggarap</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <input type="text" class="form-control" name="penggarap" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Koordinat Lokasi</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <input type="text" class="form-control" name="koordinat_lokasi"
+                                                            id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Jenis Lahan</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <input type="text" class="form-control" name="jenis_lahan"
+                                                            id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Status Lahan</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <input type="text" class="form-control" name="status_lahan"
+                                                            id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Luas</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <input type="text" class="form-control" name="luas" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Pemanfaatan Lahan</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <select class="form-control" name="pemanfaatan_lahan" id="">
+                                                            <option>-- Pilih --</option>
+
+                                                            <option>sawah</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Intensitas Tanam</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <input type="text" class="form-control" name="intensitas_tanam"
+                                                            id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Status Irigasi</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <select class="form-control" name="status_irigasi" id="">
+                                                            <option>-- Pilih --</option>
+
+                                                            <option>aktif</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-4 col-lg-4">
+                                            <div class="form-group">
+                                                <label>Nama DI</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <input type="text" class="form-control" name="nama_di" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>pengairan</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <input type="text" class="form-control" name="pengairan" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>NOP</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <input type="text" class="form-control" name="nop" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Katam</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <input type="text" class="form-control" name="katam" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>no_foto</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <input type="text" class="form-control" name="no_foto" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Keterangan</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <textarea class="form-control" name="keterangan"
+                                                            id="keterangan"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Upload Foto Peta</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <input type="file" class="form-control" name="sumber_lp2b"
+                                                            id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                    <button type="button" class="btn btn-primary"
+                                        style="background-color: #20bdd8 !important;">Submit</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+    <script src=""></script>
+    <script>
+        $(document).ready(function () {
+            $('#table_id').DataTable({
+                "columnDefs": [
+                    { type: "phoneNumber", targets: 4 }
+                ]
+            });
+
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <!-- Plugins This Page -->
+    <!-- End Plugins This Page -->
+    <script type="text/javascript">
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/images/template/shortcut_icon.ico">
+    <title></title>
+
+    <!-- <link href="/stylesheets/template/css/theme.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <link href="/stylesheets/template/css/style.css" rel="stylesheet"> -->
+    <link href="/stylesheets/template/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Plugin This Page -->
+    
+
+    
+       <script src="/plugins/jquery/jquery-1.11.1.min.js"></script>
+       
+    <!-- End Plugins This Page -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        html {
+            font-family: "avenir";
+
+        }
+
+        @font-face {
+            font-family: "avenir";
+            src: url('/stylesheets/template/fonts/Avenir.ttf');
+        }
+
+        .table-responsive{
+          width: 96% !important;
+        }
+    </style>
+</head>
+
+<body>
+  <form method="POST" action="/autentifikasi/login_front">
+    <input type="hidden" name="tujuan" value="<%=tujuan%>"/>
+                                     
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <div style="display: flex;justify-content: center;align-items: center;height: 100vh;">
+          <div style="width: 100%;height: ;background-color: #e0e0e0;flex-direction: column;padding: 30px;box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);border-radius: 10px;">
+            <h4><strong>LOGIN</strong></h4>
+            <h4><strong>LPPB KOTA SALATIGA</strong></h4>
+            <hr/>
+            <div class="form-group" style="width: 100%;">
+              <label>Username</label>
+              <input type="text" class="form-control" name="username" id="" >
+            </div>
+  
+            <div class="form-group" style="width: 100%;">
+              <label>Password</label>
+              <input type="password" class="form-control" name="password" id="" >
+            </div>
+  
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    
+    <!-- Plugins This Page -->
+
+    <!-- End Plugins This Page -->
+    <script type="text/javascript">
+      
+    </script>
+</body>
+
+</html>

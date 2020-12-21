@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/images/template/shortcut_icon.ico">
+    <title></title>
+
+    <!-- <link href="/stylesheets/template/css/theme.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <link href="/stylesheets/template/css/style.css" rel="stylesheet"> -->
+    <link href="/stylesheets/template/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Plugin This Page -->
+    
+
+    
+       <script src="/plugins/jquery/jquery-1.11.1.min.js"></script>
+       
+    <!-- End Plugins This Page -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        html {
+            font-family: "avenir";
+
+        }
+
+        @font-face {
+            font-family: "avenir";
+            src: url('/stylesheets/template/fonts/Avenir.ttf');
+        }
+
+        .table-responsive{
+          width: 96% !important;
+        }
+    </style>
+</head>
+
+<body>
+  <header style="background-color: seagreen;padding-top: 10px;padding-bottom: 10px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h5 style="color: #fff;text-align: center;"><strong>DINAS PERTANIAN KOTA SALATIGA</strong></h5>
+        </div>
+      </div>
+    </div>
+  </header>
+    <div class="container">
+        <div class="row" style="margin-top: 30px;">
+          <div class="col-xs-12 col-sm-12">
+            <h4 class="text-center"><strong>DATA LPPB</strong></h4>
+            <ul class="list-inline text-center" style="margin-bottom: 10px;">
+              <li class="list-inline-item"><a href="/surveyor/dashboard">DASHBOARD</a></li>
+              <li class="list-inline-item">|</li>
+              <li class="list-inline-item"><strong>DATA</strong></li>
+            </ul>
+            <hr/>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-xs-12 col-md-12 col-lg-12">
+              <a href="/surveyor/insert" class="btn btn-primary">Tambah Data</a>
+            </div>
+            
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 table-responsive" style="margin-top: 15px;">
+                <table class="table table-bordered table-striped" id="data">
+                  <thead>
+                    <tr>
+                      <th class="header">No.</th>
+                      <th class="header">No. Bidang</th>
+                      <th class="header">Alamat</th>
+                      <th class="header">Koordinat</th>
+                      <th class="header">Pemilik</th>
+                      <th class="header">Penggarap</th>
+                      <th class="header">Jenis Lahan</th>
+                      <th class="header">Luas</th>
+                      <th class="header">Pemanfaatan Lahan</th>
+                      <th class="header" style="width: 100px;">Option</th>
+                    </tr>
+      
+                  </thead>
+                  <tbody>
+                    <% data.forEach((el, i) => { %>
+                      <tr>
+                        <td><%= i+1%></td>
+                        <td><%=el.dataValues.no_bidang%></td>
+                        <td><%=el.dataValues.alamat%></td>
+                        <td><a href="https://www.google.com/maps/dir/Current+Location/<%=el.dataValues.koordinat.coordinates[1].toFixed(4)%>,<%=el.dataValues.koordinat.coordinates[0].toFixed(4)%>" target="_blank"><%=el.dataValues.koordinat.coordinates[0].toFixed(4)%>, <%=el.dataValues.koordinat.coordinates[1].toFixed(4)%></a></td>
+                        <td><%=el.dataValues.pemilik%></td>
+                        <td><%=el.dataValues.penggarap%></td>
+                        <td><%=el.dataValues.jenis_lahan%></td>
+                        <td><%=el.dataValues.luas%></td>
+                        <td><%=el.dataValues.pemanfaatanLahan.nama%></td>
+                        <td>
+                          <center>
+                            <ul class="list-inline">
+                              <li class="list-inline-item"><a class="btn btn-warning btn-sm" href="/surveyor/edit/<%=el.dataValues.id%>"
+                                role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></li>
+                              <li class="list-inline-item"><a class="btn btn-danger btn-sm"
+                                href="/surveyor/delete/<%=el.dataValues.id%>" role="button"
+                                onclick="return confirm('Apakah anda yakin untuk menghapus data ini ?');"><i
+                                  class="fa fa-trash-o" aria-hidden="true"></i></a></li>
+                            </ul>
+                            <ul class="list-inline" style="margin-bottom: 0;">
+                              <li class="list-inline-item"><a class="btn btn-success btn-sm" href="/surveyor/katam/<%=el.dataValues.id%>"
+                                role="button">Kalender Tanam</a></li>
+                                <li><a class="btn btn-info btn-embossed btn-sm" href="/surveyor/lahan/<%=el.dataValues.id%>"
+                                  role="button">Pengurangan Lahan</a></li>
+                            </ul>
+                          </center>
+                        </td>
+                      </tr>
+                      <%})%>
+
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <!-- Plugins This Page -->
+
+    <!-- End Plugins This Page -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#data').DataTable({
+          "language": {
+              "sProcessing":   "Sedang memproses...",
+              "sLengthMenu":   "_MENU_",
+              "sZeroRecords":  "Tidak ditemukan data yang sesuai",
+              "sInfo":         "Menampilkan _START_ sampai _END_ dari _TOTAL_ entri",
+              "sInfoEmpty":    "Menampilkan 0 sampai 0 dari 0 entri",
+              "sInfoFiltered": "(disaring dari _MAX_ entri keseluruhan)",
+              "sInfoPostFix":  "",
+              "sUrl":          "",
+              "oPaginate": {
+                "sFirst":    "Pertama",
+                "sPrevious": "Sebelumnya",
+                "sNext":     "Selanjutnya",
+                "sLast":     "Terakhir"
+              }
+          },
+          // "columnDefs": [
+          //     { "width": "100px", "targets": 9}
+          // ],
+        });
+      });
+    </script>
+</body>
+
+</html>
